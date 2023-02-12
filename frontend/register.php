@@ -14,7 +14,7 @@ session_start();
 <?php
     if(isset($_POST['submit']))
     {
-        require "../backend/dbconnect.php";
+        require "../Connection.php";
         $fname=$_POST['fname'];
         $lname=$_POST['lname'];
         echo $fname;
