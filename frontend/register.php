@@ -12,9 +12,12 @@ session_start();
 ?>
 <?php include "header.php"?>
 <?php
-    echo "Dopled";
     if(isset($_POST['submit']))
     {
+        require "../backend/dbconnect.php";
+        $fname=$_POST['fname'];
+        $lname=$_POST['lname'];
+        echo $fname;
         echo "Done";
     }
 ?>
