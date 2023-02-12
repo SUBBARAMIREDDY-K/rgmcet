@@ -11,6 +11,8 @@ session_start();
     }
 ?>
 <?php include "header.php"?>
+
+
 <body>
     
 <div class="account-pages mt-5 mb-5">
@@ -22,7 +24,7 @@ session_start();
                             <div class="card-body p-4">
                                 <h3 class="auth-title" style="text-align:center"><?php echo $_SESSION['event']." Registration"; ?></h3>
                                 <hr/>
-                                <form action="../backend/dbconnect.php" method="post">
+                                <form action="../backend/dbregister.php" method="post">
                                     
                                     <div class="row">
                                     <div class="col-md-6">

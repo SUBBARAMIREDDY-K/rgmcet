@@ -1,5 +1,12 @@
 <?php    
-    include 'dbconnect.php';
+    // include 'dbconnect.php';
+    require('config.php');
+    $conn = mysqli_init();
+    mysqli_ssl_set($conn,NULL,NULL,$sslcert,NULL,NULL);
+    if(!mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306, MYSQLI_CLIENT_SSL)){
+        die('Failed to connect to MySQL: '.mysqli_connect_error());
+    }
+
     if($_SERVER['REQUEST_METHOD']=='POST')
       {
           $firstname=ucfirst($_POST["fname"]);
@@ -14,7 +21,7 @@
           $event=$_POST['event'];
           if(!empty($firstname) && !empty($lastname) && !empty($collegeid) && !empty($phoneno) && !empty($email) && !empty($collegename) && !empty($branch) && !empty($year) && !empty($event))
           {
-                $query = "SELECT `email` FROM `registrations` WHERE `event` = '$event' and `collegeid` = '$collegeid'";
+                $query = "SELECT `email` FROM `registrations` WHERE `events` = '$event' and `collegeid` = '$collegeid'";
                 if($query_run = mysqli_query($mycon,$query))
                 {
                     $num_rows = mysqli_num_rows($query_run);
