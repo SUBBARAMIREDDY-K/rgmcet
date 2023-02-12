@@ -11,6 +11,12 @@ session_start();
     }
 ?>
 <?php include "header.php"?>
+<?php
+    if(isset($_POST['submit']))
+    {
+        echo "Done";
+    }
+?>
 <body>
     
 <div class="account-pages mt-5 mb-5">
@@ -22,8 +28,7 @@ session_start();
                             <div class="card-body p-4">
                                 <h3 class="auth-title" style="text-align:center"><?php echo $_SESSION['event']." Registration"; ?></h3>
                                 <hr/>
-                                <form action="../backend/dbregister.php" method="post">
-                                    
+                                <form action="" method="post">
                                     <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group mb-3">
