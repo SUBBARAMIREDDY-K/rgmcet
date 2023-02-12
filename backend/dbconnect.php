@@ -5,9 +5,9 @@
     if(!mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306, MYSQLI_CLIENT_SSL)){
         die('Failed to connect to MySQL: '.mysqli_connect_error());
     }
-    else{
-        echo "Connected to MySQL";
-    }
+    // else{
+    //     echo "Connected to MySQL";
+    // }
 
     $res = mysqli_query($conn, "SHOW TABLES LIKE 'registrations'");
 
