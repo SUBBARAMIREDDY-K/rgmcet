@@ -12,6 +12,7 @@ session_start();
 ?>
 <?php include "header.php"?>
 <?php
+    echo "Dopled";
     if(isset($_POST['submit']))
     {
         echo "Done";
