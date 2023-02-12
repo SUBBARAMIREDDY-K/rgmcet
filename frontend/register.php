@@ -12,6 +12,7 @@ session_start();
 ?>
 <?php include "header.php"?>
 <?php
+    print($_POST);
     if(isset($_POST['submit']))
     {
         require "../Connection.php";
@@ -24,125 +25,124 @@ session_start();
 <body>
     
 <div class="account-pages mt-5 mb-5">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-xl-6">
-                        
-                        <div class="card">
-                            <div class="card-body p-4">
-                                <h3 class="auth-title" style="text-align:center"><?php echo $_SESSION['event']." Registration"; ?></h3>
-                                <hr/>
-                                <form action="" method="post">
-                                    <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3">
-                                            <label for="emailaddress">Firstname</label>
-                                            <input class="form-control" type="text" id="emailaddress" name="fname" placeholder="Enter your Firstname" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3">
-                                            <label for="emailaddress">Lastname</label>
-                                            <input class="form-control" type="text" id="emailaddress" name="lname" placeholder="Enter your Lastname" required>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="col-md-12">
-                                        <div class="form-group mb-3">
-                                        <label for="gender">Gender</label>
-                                        <select class="form-control" name="gender" required>
-                                                <option selected="" disabled="">--Select--</option>
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>
-                                                <option value="Others">Others</option>
-                                                
-                                               
-                                            </select>
-                                        </div>
-                                    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-6 col-xl-6">
+                
+                <div class="card">
+                    <div class="card-body p-4">
+                        <h3 class="auth-title" style="text-align:center"><?php echo $_SESSION['event']." Registration"; ?></h3>
+                        <hr/>
+                        <form action="" method="POST">
+                            <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="emailaddress">Firstname</label>
+                                    <input class="form-control" type="text" id="emailaddress" name="fname" placeholder="Enter your Firstname" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="emailaddress">Lastname</label>
+                                    <input class="form-control" type="text" id="emailaddress" name="lname" placeholder="Enter your Lastname" required>
+                                </div>
+                            </div>
+                
+                            <div class="col-md-12">
+                                <div class="form-group mb-3">
+                                <label for="gender">Gender</label>
+                                <select class="form-control" name="gender" required>
+                                        <option selected="" disabled="">--Select--</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Others">Others</option>
+                                        
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="emailaddress">Email</label>
+                                    <input class="form-control" type="email" id="emailaddress" name="email" placeholder="Enter your Email" required>
+                                </div>
+                            </div>
 
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3">
-                                            <label for="emailaddress">Email</label>
-                                            <input class="form-control" type="email" id="emailaddress" name="email" placeholder="Enter your Email" required>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3">
-                                            <label for="emailaddress">Phone</label>
-                                            <input class="form-control" type="text" id="emailaddress" name="phone" placeholder="Enter your Phone" required>
-                                        </div>
-                                    </div>
-                                    
-                                    
-                                    <div class="col-md-12">
-                                        <div class="form-group mb-3">
-                                            <label for="emailaddress">College Id</label>
-                                            <input class="form-control" type="text" id="emailaddress" name="collegeid" placeholder="Enter your college Id" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group mb-3">
-                                            <label for="emailaddress">College Name</label>
-                                            <input class="form-control" type="text" id="emailaddress" name="collegename" placeholder="Enter your College Name" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group mb-3">
-                                            <label for="emailaddress">Year</label>
-                                            <select class="form-control" name="year" required>
-                                                <option selected="" disabled="">--Select year--</option>
-                                                <option value="I">I</option>
-                                                <option value="II">II</option>
-                                                <option value="III">III</option>
-                                                <option value="IV">IV</option>
-                                               
-                                            </select>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-12">
-                                        <div class="form-group mb-3">
-                                            <label for="emailaddress">Branch</label>
-                                            <select class="form-control" name="dept" required>
-                                                <option selected="" disabled="">--Select Branch--</option>
-                                                <option value="cse">CSE</option>
-                                                <option value="cse-ds">CSE-DS</option>
-                                                <option value="cse-bs">CSE-BS</option>
-                                                <option value="cse-bs">CSE-AI/ML</option>
-                                                <option value="cse-bs">CSE-CS</option>
-                                                <option value="ece">ECE</option>
-                                                <option value="eee">EEE</option>
-                                                <option value="civil">CIVIL</option>
-                                                <option value="mech">MECH</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3">
-                                            <input type="hidden" value="<?php echo $_SESSION['event']; ?>" name="event" checked>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group mb-0 text-center">
-                                            <button class="btn btn-danger btn-block" type="submit" name="submit"> Register </button>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </form>
-                            </div> <!-- end card-body -->
-                        </div>
-                        <!-- end card -->
-                        
-                        <!-- end row -->
-
-                    </div> <!-- end col -->
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="emailaddress">Phone</label>
+                                    <input class="form-control" type="text" id="emailaddress" name="phone" placeholder="Enter your Phone" required>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="col-md-12">
+                                <div class="form-group mb-3">
+                                    <label for="emailaddress">College Id</label>
+                                    <input class="form-control" type="text" id="emailaddress" name="collegeid" placeholder="Enter your college Id" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group mb-3">
+                                    <label for="emailaddress">College Name</label>
+                                    <input class="form-control" type="text" id="emailaddress" name="collegename" placeholder="Enter your College Name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group mb-3">
+                                    <label for="emailaddress">Year</label>
+                                    <select class="form-control" name="year" required>
+                                        <option selected="" disabled="">--Select year--</option>
+                                        <option value="I">I</option>
+                                        <option value="II">II</option>
+                                        <option value="III">III</option>
+                                        <option value="IV">IV</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <div class="form-group mb-3">
+                                    <label for="emailaddress">Branch</label>
+                                    <select class="form-control" name="dept" required>
+                                        <option selected="" disabled="">--Select Branch--</option>
+                                        <option value="cse">CSE</option>
+                                        <option value="cse-ds">CSE-DS</option>
+                                        <option value="cse-bs">CSE-BS</option>
+                                        <option value="cse-bs">CSE-AI/ML</option>
+                                        <option value="cse-bs">CSE-CS</option>
+                                        <option value="ece">ECE</option>
+                                        <option value="eee">EEE</option>
+                                        <option value="civil">CIVIL</option>
+                                        <option value="mech">MECH</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <input type="hidden" value="<?php echo $_SESSION['event']; ?>" name="event" checked>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group mb-0 text-center">
+                                    <button class="btn btn-danger btn-block" type="submit" name="submit"> Register </button>
+                                </div>
+                            </div>
+                            </div>
+                        </form>
+                    </div> <!-- end card-body -->
                 </div>
+                <!-- end card -->
+                
                 <!-- end row -->
-            </div>
-            <!-- end container -->
+
+            </div> <!-- end col -->
         </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>
         <!-- end page -->
 <?php include "footer.php"?>
 </body>
