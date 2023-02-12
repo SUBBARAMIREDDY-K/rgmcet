@@ -12,7 +12,7 @@ session_start();
 ?>
 <?php include "header.php"?>
 <?php
-    print($_POST);
+    print_r($_POST);
     if(isset($_POST['submit']))
     {
         require "../Connection.php";
@@ -126,7 +126,7 @@ session_start();
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group mb-0 text-center">
-                                    <button class="btn btn-danger btn-block" type="submit" name="submit"> Register </button>
+                                    <button class="btn btn-danger btn-block" type="submit" name="submit" value="submit"> Register </button>
                                 </div>
                             </div>
                             </div>
